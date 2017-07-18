@@ -8,7 +8,7 @@ One thing I could never find was a full setup guide.  I had to piece this togeth
 
 # Installation Setup
 
-	1.) git clone https://github.com/w0rtw0rt/EternalBlue to any directory
+	1.) git clone (https://github.com/w0rtw0rt/EternalBlue) to any directory
 	2.) Place eternalblue-doublepulsar.rb file into the /usr/share/metasploit-framework/modules/exploits/windows/smb folder
 	3.) open terminal
 	4.) dpkg --add-architecture i386 && apt-get update && apt-get install wine32
